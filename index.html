@@ -13,10 +13,39 @@
 				<div class='row'>we are coming soon...</div>
 				<div class='row row_shrink small_text color_1'>sign up for more information</div>
 				<div class='inputrow'>
-					<input id="textfield" type="text" placeholder="youremail@domain.com" class='width_40' /><span class='button'> > </span>
+					<input type="text" id='email' placeholder="youremail@domain.com" class='width_40' /><span class='button' id='submit_email'> > </span>
 				</div>
+				<div class='row row_shrink message color_2'>Don't worry there will be no spam's from DATAShark.</div>
 			</div>
 			<div class='width_100 footer center_text'>&copy; Copyright 2013</div>
 		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+		$('#submit_email').on('click',function(){
+			var dataString = 'email='+$('#email').val();
+			$.ajax({
+				url: "process.php",
+				cache: false,
+				type: 'post',
+				dataType: "json",
+				data: dataString,
+				success: function(res){
+					if(res.status==200){
+						$('.inputrow').remove();
+						$('.message').addClass('success');
+					}
+					else if(res.status==409){
+						$('.inputrow').remove();
+						$('.message').addClass('duplicate');
+					}
+					else
+						$('.message').addClass('fail');
+					
+					$('.message').html('<div>'+res.message+'</div>');
+				}
+			});
+		});
+		</script>
 	</body>
 <html>

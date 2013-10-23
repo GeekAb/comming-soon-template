@@ -1,5 +1,11 @@
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%;	font: inherit;	vertical-align: baseline;}/* HTML5 display-role reset for older browsers */article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {	display: block;}body {	line-height: 1;}ol, ul {	list-style: none;}blockquote, q {	quotes: none;}blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}table {	border-collapse: collapse;	border-spacing: 0;}
 
+@font-face {
+	font-family:"Harabara Bold";
+	src:url("fonts/Harabara.eot?") format("eot"),url("fonts/Harabara.woff") format("woff"),url("fonts/Harabara.ttf") format("truetype"),url("fonts/Harabara.svg#") format("svg");
+	font-weight:normal;font-style:normal;
+}
+
 html { 
 	background: url(images/background.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
@@ -14,12 +20,12 @@ html {
 .width_100{width: 100%;}
 .width_75{width: 75%;}
 .width_50{width: 50%;}
+.width_40{width: 40%;}
 
 .container{
    height:100%;
-   border: 1px solid red;
    margin: 0 auto;
-   font-family: 'Montserrat', sans-serif;
+   font-family: 'Myriad Pro', sans-serif;
    color: #fff;
 }
 
@@ -28,20 +34,22 @@ html {
 	text-align: left;
 	font-size: 72px;
 	margin-top: 7%;
+	font-family: "Harabara Bold", sans-serif;
 }
 
-.content{}
+.content{padding:30px;}
 
 .footer{}
 
 .button {
 	border-top: 1px solid #96d1f8;
 	background: #0086e0;
-	padding: 8px 16px;
+	padding: 10px 16px;
 	color: white;
 	font-size: 14px;
 	text-decoration: none;
 	vertical-align: middle;
+	cursor: pointer;
 }
 .button:hover {
 	border-top-color: #28597a;
@@ -51,4 +59,44 @@ html {
 .button:active {
 	border-top-color: #1b435e;
 	background: #1b435e;
+}
+
+.row{
+	width: 100%;font-size: 45px;margin: 20px 0;font-weight: 200;
+}
+
+.row_shrink{margin: 20px 0 5px;}
+
+.content .row{}
+
+.strong {
+	font-weight: 600;
+}
+
+.small_text {font-size: 12px;}
+.center_text{text-align: center;}
+.color_1{color:#253a5a;}
+
+:-moz-placeholder {
+    font-style: italic;
+}
+::-webkit-input-placeholder {
+    font-style: italic;
+}
+
+*:focus {outline: none;}
+
+input {
+    height:40px;
+    padding:5px 8px;
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    margin-right: 10px;
+}
+
+input:focus{
+    background: #fff;
+    border:1px solid #28597a;
+    box-shadow: 0 0 3px #aaa;
 }
